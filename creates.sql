@@ -13,7 +13,6 @@ CREATE TABLE livros (
     id SERIAL PRIMARY KEY,
     titulo VARCHAR(150) NOT NULL,
     autor VARCHAR(100) NOT NULL,
-    genero VARCHAR(50),
     ano_publicacao INTEGER,
-    quantidade INTEGER DEFAULT 0
+    genero VARCHAR(50)
 );

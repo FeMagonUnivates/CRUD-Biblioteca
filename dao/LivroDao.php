@@ -1,10 +1,10 @@
 <?php
 
 require_once __DIR__ . '/../Database.php';
-require_once __DIR__ . '/../model/Cliente.php';
+require_once __DIR__ . '/../model/Livro.php';
 
-class ClienteDao {
-    private $tabela = 'clientes';
+class LivroDao {
+    private $tabela = 'livros';
     private $connection;
 
     public function __construct() {
@@ -12,15 +12,15 @@ class ClienteDao {
         $this->connection   = $db->connection;
     }
 
-    public function salvar(Cliente $cliente) {
-        $sql    = "INSERT INTO $this->tabela (nome, cpf, telefone, cep) VALUES (?, ?, ?, ?)";
+    public function salvar(Livro $livro) {
+        $sql    = "INSERT INTO $this->tabela (titulo, autor, ano_publicacao, genero) VALUES (?, ?, ?, ?)";
         $stmt   = $this->connection->prepare($sql);
 
         $stmt->execute([
-            $cliente->getNome(),
-            $cliente->getCpf(),
-            $cliente->getTelefone(),
-            $cliente->getCep()
+            $livro->getTitulo(), 
+            $livro->getAutor(), 
+            $livro->getAnoPublicacao(), 
+            $livro->getGenero()
         ]);
     }
 
@@ -32,24 +32,24 @@ class ClienteDao {
 
         if (!$row) return null;
 
-        return new Cliente(
-            $row['nome'],
-            $row['cpf'],
-            $row['telefone'],
-            $row['cep'],
-            $row['id']
+        return new Livro(
+            $row['titulo'],
+            $row['autor'],
+            $row['ano_publicacao'],
+            $row['genero'],
+            $row['id'],
         );
     }
 
-    public function atualizar(Cliente $cliente) {
-        $sql  = "UPDATE $this->tabela SET nome = ?, cpf = ?, telefone = ?, cep = ? WHERE id = ?";
+    public function atualizar(Livro $livro) {
+        $sql  = "UPDATE $this->tabela SET titulo = ?, autor = ?, ano_publicacao = ?, genero = ? WHERE id = ?";
         $stmt = $this->connection->prepare($sql);
         $stmt->execute([
-            $cliente->getNome(),
-            $cliente->getCpf(),
-            $cliente->getTelefone(),
-            $cliente->getCep(),
-            $cliente->getId()
+            $livro->getTitulo(), 
+            $livro->getAutor(), 
+            $livro->getAnoPublicacao(), 
+            $livro->getGenero(),
+            $livro->getId()
         ]);
     }
 
@@ -65,19 +65,19 @@ class ClienteDao {
         $stmt->execute();
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        $clientes = [];
+        $livros = [];
         
         foreach ($rows as $row) {
-            $clientes[] = new Cliente(
-                $row['nome'],
-                $row['cpf'],
-                $row['telefone'],
-                $row['cep'],
+            $livros[] = new Livro(
+                $row['titulo'],
+                $row['autor'],
+                $row['ano_publicacao'],
+                $row['genero'],
                 $row['id']
             );
         }
 
-        return $clientes;
+        return $livros;
     }
 }
 
