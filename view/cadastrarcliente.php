@@ -53,31 +53,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <label>CEP</label>
             <input 
                 type="text" 
-                placeholder="CEP do cliente" 
+                placeholder="00000-000"
+                maxlength="9"
+                minlength="9"
+                pattern="[0-9]{5}-[0-9]{3}"
+                id="cep"
                 name="cep" 
                 required>
-            <br>
-
-            <button id="btnCep">Buscar CEP</button>
+            <br>    <button type="button" id="btnCep">Buscar CEP</button>
 
             <label>Rua</label>
             <input 
                 type="text" 
-                placeholder="Rua do cliente" 
+                placeholder="Rua do cliente"
+                id="rua"
                 name="rua">
             <br>
 
             <label>Bairro</label>
             <input 
                 type="text" 
-                placeholder="Bairro do cliente" 
+                placeholder="Bairro do cliente"
+                id="bairro"
                 name="bairro">
             <br>
 
             <label>Cidade</label>
             <input 
                 type="text" 
-                placeholder="Cidade do cliente" 
+                placeholder="Cidade do cliente"
+                id="cidade"
                 name="cidade">
             <br>
 
@@ -95,6 +100,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
         
     </div>
+
+    <script src="../js/cep.js"></script>
 
 </body>
 

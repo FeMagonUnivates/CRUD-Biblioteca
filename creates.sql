@@ -3,7 +3,7 @@ CREATE TABLE clientes (
     nome VARCHAR(100) NOT NULL,
     cpf VARCHAR(14),
     telefone VARCHAR(20),
-    cep VARCHAR(9),
+    cep VARCHAR(9) NOT NULL,
     rua VARCHAR(100),
     bairro VARCHAR(100),
     cidade VARCHAR(100)
