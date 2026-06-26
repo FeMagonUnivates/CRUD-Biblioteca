@@ -20,6 +20,9 @@ class ClienteController {
             $_POST['cpf'],
             $_POST['telefone'],
             $_POST['cep'],
+            $_POST['rua'],
+            $_POST['bairro'],
+            $_POST['cidade'],
             $_POST['id'],
         );
 
@@ -42,6 +45,9 @@ class ClienteController {
             $_POST['cpf'],
             $_POST['telefone'],
             $_POST['cep'],
+            $_POST['rua'],
+            $_POST['bairro'],
+            $_POST['cidade']
         );
 
         $dao = new ClienteDao();

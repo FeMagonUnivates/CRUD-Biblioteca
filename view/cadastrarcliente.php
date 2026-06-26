@@ -82,6 +82,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <br>
 
             <button type="submit">Cadastrar</button>
+
         </form>
 
         <div class="links">

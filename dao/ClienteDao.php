@@ -13,14 +13,17 @@ class ClienteDao {
     }
 
     public function salvar(Cliente $cliente) {
-        $sql    = "INSERT INTO $this->tabela (nome, cpf, telefone, cep) VALUES (?, ?, ?, ?)";
+        $sql    = "INSERT INTO $this->tabela (nome, cpf, telefone, cep, rua, bairro, cidade) VALUES (?, ?, ?, ?, ?, ?, ?)";
         $stmt   = $this->connection->prepare($sql);
 
         $stmt->execute([
             $cliente->getNome(),
             $cliente->getCpf(),
             $cliente->getTelefone(),
-            $cliente->getCep()
+            $cliente->getCep(),
+            $cliente->getRua(),
+            $cliente->getBairro(),
+            $cliente->getCidade()
         ]);
     }
 
@@ -37,18 +40,24 @@ class ClienteDao {
             $row['cpf'],
             $row['telefone'],
             $row['cep'],
+            $row['rua'],
+            $row['bairro'],
+            $row['cidade'],
             $row['id']
         );
     }
 
     public function atualizar(Cliente $cliente) {
-        $sql  = "UPDATE $this->tabela SET nome = ?, cpf = ?, telefone = ?, cep = ? WHERE id = ?";
+        $sql  = "UPDATE $this->tabela SET nome = ?, cpf = ?, telefone = ?, cep = ?, rua = ?, bairro = ?, cidade = ? WHERE id = ?";
         $stmt = $this->connection->prepare($sql);
         $stmt->execute([
             $cliente->getNome(),
             $cliente->getCpf(),
             $cliente->getTelefone(),
             $cliente->getCep(),
+            $cliente->getRua(),
+            $cliente->getBairro(),
+            $cliente->getCidade(),
             $cliente->getId()
         ]);
     }
@@ -73,6 +82,9 @@ class ClienteDao {
                 $row['cpf'],
                 $row['telefone'],
                 $row['cep'],
+                $row['rua'],
+                $row['bairro'],
+                $row['cidade'],
                 $row['id']
             );
         }
