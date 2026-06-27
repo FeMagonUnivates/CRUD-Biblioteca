@@ -38,8 +38,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <label>CPF</label>
             <input 
                 type="text" 
-                placeholder="CPF do cliente" 
-                name="cpf" 
+                placeholder="CPF do cliente"
+                maxlength="11"
+                minlength="11"
+                name="cpf"
                 required>
             <br>
 
@@ -52,19 +54,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             <label>CEP</label>
             <input 
-                type="text" 
+                type="text"
                 placeholder="00000-000"
                 maxlength="9"
                 minlength="9"
                 pattern="[0-9]{5}-[0-9]{3}"
                 id="cep"
-                name="cep" 
+                name="cep"
                 required>
-            <br>    <button type="button" id="btnCep">Buscar CEP</button>
+            <button type="button" id="btnCep">Buscar CEP</button>
+            <br>
 
             <label>Rua</label>
             <input 
-                type="text" 
+                type="text"
                 placeholder="Rua do cliente"
                 id="rua"
                 name="rua">
