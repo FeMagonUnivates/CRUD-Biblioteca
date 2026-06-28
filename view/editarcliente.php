@@ -40,7 +40,6 @@ if (!$cliente) {
                 type="hidden" 
                 name="id"
                 value="<?= htmlspecialchars($cliente->getId()) ?>">
-            <br>
 
             <label>Nome</label>
             <input
@@ -66,10 +65,25 @@ if (!$cliente) {
                 value="<?= htmlspecialchars($cliente->getTelefone()) ?>">
             <br>
 
+            <label>CEP</label>
+            <input 
+                type="text"
+                placeholder="00000-000"
+                maxlength="9"
+                minlength="9"
+                pattern="[0-9]{5}-[0-9]{3}"
+                id="cep"
+                name="cep"
+                value="<?= htmlspecialchars($cliente->getCEP()) ?>"
+                required>
+            <button type="button" id="btnCep">Buscar CEP</button>
+            <br>
+
             <label>Rua</label>
             <input
                 type="text"
                 placeholder="Rua do cliente"
+                id="rua"
                 name="rua"
                 value="<?= htmlspecialchars($cliente->getRua()) ?>">
             <br>
@@ -78,6 +92,7 @@ if (!$cliente) {
             <input
                 type="text"
                 placeholder="Bairro do cliente"
+                id="bairro"
                 name="bairro"
                 value="<?= htmlspecialchars($cliente->getBairro()) ?>">
             <br>
@@ -86,6 +101,7 @@ if (!$cliente) {
             <input
                 type="text"
                 placeholder="Cidade do cliente"
+                id="cidade"
                 name="cidade"
                 value="<?= htmlspecialchars($cliente->getCidade()) ?>">
             <br>
@@ -100,6 +116,8 @@ if (!$cliente) {
         </div>
 
     </div>
+
+    <script src="../js/cep.js"></script>
 
 </body>
 

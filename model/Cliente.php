@@ -10,7 +10,7 @@ class Cliente {
     private $bairro;
     private $cidade;
 
-    public function __construct($nome, $cpf, $telefone, $cep, $id = null) {
+    public function __construct($nome, $cpf, $telefone, $cep, $rua, $bairro, $cidade, $id = null) {
         $this->id               = $id;
         $this->nome             = $nome;
         $this->cpf              = $cpf;
