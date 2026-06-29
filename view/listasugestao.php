@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Listagem de sugestões</title>
+    <link rel="stylesheet" href="../css/styleListaSugestao.css">
 </head>
 
 <body>
@@ -13,7 +14,7 @@
 
         <h2>Sugestões cadastradas</h2>
 
-        <table>
+        <table id="tabela" style="display: none;">
             <thead>
                 <tr>
                     <th>ID</th>

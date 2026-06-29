@@ -20,28 +20,31 @@ async function listarSugestoes() {
 
     const sugestoes = await response.json();
 
-    const tabela = document.getElementById("tabelaSugestoes");
+    const tabela = document.getElementById("tabela");
+    const corpoTabela = document.getElementById("tabelaSugestoes");
     const mensagem = document.getElementById("mensagemVazia");
 
-    tabela.innerHTML = "";
+    corpoTabela.innerHTML = "";
 
     if (sugestoes.length === 0) {
+        tabela.style.display = "none";
         mensagem.style.display = "block";
         return;
     }
 
+    tabela.style.display = "table";
     mensagem.style.display = "none";
 
     sugestoes.forEach(sugestao => {
 
-        tabela.innerHTML += `
+        corpoTabela.innerHTML += `
             <tr>
                 <td>${sugestao.id}</td>
                 <td>${sugestao.cliente}</td>
                 <td>${sugestao.livro}</td>
                 <td>${sugestao.comentario}</td>
                 <td>
-                    <button onclick="excluirSugestao('${sugestao.id}')">
+                    <button class="btnExcluir" onclick="excluirSugestao('${sugestao.id}')">
                         Excluir
                     </button>
                 </td>
