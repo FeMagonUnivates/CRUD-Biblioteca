@@ -19,9 +19,9 @@ $clientes = $controller->listar();
 
 <body>
 
-    <div class="conteudo">
+    <div class="card">
 
-        <h2>Clientes cadastrados</h2>
+        <h2>Clientes Cadastrados</h2>
 
         <?php if (count($clientes) > 0): ?>
             <table>
@@ -48,12 +48,12 @@ $clientes = $controller->listar();
                             <td><?= $cliente->getBairro() ?></td>
                             <td><?= $cliente->getCidade() ?></td>
                             <td>
-                                <a class="btn-editar" href="editarcliente.php?id=<?= $cliente->getId() ?>">Editar</a>
+                                <a class="btnEditar" href="editarcliente.php?id=<?= $cliente->getId() ?>">Editar</a>
 
                                 <form action="deletarcliente.php" method="POST" style="display:inline"
                                     onsubmit="return confirm('Deseja realmente excluir o cliente?')">
                                     <input type="hidden" name="id" value="<?= $cliente->getId() ?>">
-                                    <button type="submit" class="btn-excluir">Excluir</button>
+                                    <button type="submit" class="btnExcluir">Excluir</button>
                                 </form>
                             </td>
                         </tr>
@@ -65,12 +65,11 @@ $clientes = $controller->listar();
         <?php endif; ?>
         
         <div class="links">
-            <div>
-                <a href="cadastrarcliente.php">Cadastrar novo cliente</a>
-            </div>
-            <div>
-                <a href="../index.html">Voltar para Início</a>
-            </div>
+            
+            <a href="cadastrarcliente.php">Cadastrar novo cliente</a>
+        
+            <a href="../index.html">Voltar para Início</a>
+            
         </div>
         
     </div>

@@ -16,12 +16,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro Clientes</title>
-    <link rel="stylesheet" href="../css/styleCadastraCliente.css">
+    <link rel="stylesheet" href="../css/styleCadastrarCliente.css">
 </head>
 
 <body>
-    
-    <div class="conteudo">
+
+    <div class="card">
 
         <h2>Cadastro de Clientes</h2>
 
@@ -29,11 +29,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             
             <label>Nome</label>
             <input 
-                type="text" 
+                type="text"
                 placeholder="Nome do cliente" 
                 name="nome" 
                 required>
-            <br>
 
             <label>CPF</label>
             <input 
@@ -43,14 +42,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 minlength="11"
                 name="cpf"
                 required>
-            <br>
 
             <label>Telefone</label>
-            <input 
-                type="text" 
+            <input
+                type="text"
+                maxlength="11"
                 placeholder="Telefone do cliente" 
                 name="telefone">
-            <br>
 
             <label>CEP</label>
             <input 
@@ -63,7 +61,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 name="cep"
                 required>
             <button type="button" id="btnCep">Buscar CEP</button>
-            <br>
 
             <label>Rua</label>
             <input 
@@ -71,7 +68,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 placeholder="Rua do cliente"
                 id="rua"
                 name="rua">
-            <br>
 
             <label>Bairro</label>
             <input 
@@ -79,7 +75,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 placeholder="Bairro do cliente"
                 id="bairro"
                 name="bairro">
-            <br>
 
             <label>Cidade</label>
             <input 
@@ -87,21 +82,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 placeholder="Cidade do cliente"
                 id="cidade"
                 name="cidade">
-            <br>
 
-            <button type="submit">Cadastrar</button>
+            <button class="btnCadastrar" type="submit">Cadastrar</button>
 
         </form>
 
         <div class="links">
-            <div>
-                <a href="listacliente.php">Ver clientes cadastrados</a>
-            </div>
-            <div>
-                <a href="../index.html">Voltar para Início</a>
-            </div>
-        </div>
+
+            <a href="listacliente.php">Ver clientes cadastrados</a>
         
+            <a href="../index.html">Voltar para Início</a>
+            
+        </div>
     </div>
 
     <script src="../js/cep.js"></script>

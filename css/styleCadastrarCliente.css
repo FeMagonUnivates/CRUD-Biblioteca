@@ -1,0 +1,98 @@
+*{
+    margin:0;
+    padding:10px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    background:#21124D;
+    height: auto;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.card{
+    background:white;
+    width:550px;
+    padding:40px;
+    border-radius:20px;
+    box-shadow: -10px 10px 25px rgba(0, 0, 0, 0.629);
+}
+
+h2{
+    color:#21124D;
+    text-align:center;
+    margin-bottom:25px;
+    font-size:38px;
+}
+
+form{
+    display:flex;
+    flex-direction:column;
+}
+
+label{
+    font-size: 17px;
+    color:#21124D;
+}
+
+input{
+    height:50px;
+    padding:10px;
+    border:1px solid #CCC;
+    border-radius:10px;
+    font-size:17px;
+}
+
+#cep{
+    margin-bottom: 10px;
+}
+
+#btnCep{
+    border:none;
+    font-size: 17px;
+    background:#6D37FF;
+    color:white;
+    border-radius:10px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+#btnCep:hover{
+    background:#21124D;
+    transform:scale(1.03);
+}
+
+.btnCadastrar{
+    height:55px;
+    border:none;
+    background:#6D37FF;
+    color:white;
+    font-size:20px;
+    border-radius:12px;
+    cursor:pointer;
+    transition:.3s;
+    margin-top:10px;
+}
+
+.btnCadastrar:hover{
+    background:#21124D;
+    transform:scale(1.03);
+}
+
+.links{
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+}
+
+.links a{
+    color:#21124D;
+    text-decoration:none;
+    font-size: 17px;
+}
+
+.links a:hover{
+    text-decoration:underline;
+}

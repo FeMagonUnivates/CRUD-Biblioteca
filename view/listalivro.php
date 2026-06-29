@@ -19,7 +19,7 @@ $livros = $controller->listar();
 
 <body>
 
-    <div class="conteudo">
+    <div class="card">
 
         <h2>Livros cadastrados</h2>
 
@@ -44,12 +44,12 @@ $livros = $controller->listar();
                             <td><?= $livro->getAnoPublicacao() ?></td>
                             <td><?= $livro->getGenero() ?></td>
                             <td>
-                                <a class="btn-editar" href="editarlivro.php?id=<?= $livro->getId() ?>">Editar</a>
+                                <a class="btnEditar" href="editarlivro.php?id=<?= $livro->getId() ?>">Editar</a>
 
                                 <form action="deletarlivro.php" method="POST" style="display:inline"
                                     onsubmit="return confirm('Deseja realmente excluir o livro?')">
                                     <input type="hidden" name="id" value="<?= $livro->getId() ?>">
-                                    <button type="submit" class="btn-excluir">Excluir</button>
+                                    <button type="submit" class="btnExcluir">Excluir</button>
                                 </form>
                             </td>
                         </tr>
@@ -61,12 +61,11 @@ $livros = $controller->listar();
         <?php endif; ?>
         
         <div class="links">
-            <div>
-                <a href="cadastrarlivro.php">Cadastrar novo livro</a>
-            </div>
-            <div>
-                <a href="../index.html">Voltar para Início</a>
-            </div>
+            
+            <a href="cadastrarlivro.php">Cadastrar novo livro</a>
+        
+            <a href="../index.html">Voltar para Início</a>
+            
         </div>
         
     </div>

@@ -16,12 +16,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro Livros</title>
-    <link rel="stylesheet" href="../css/styleCadastraLivro.css">
+    <link rel="stylesheet" href="../css/styleCadastrarLivro.css">
 </head>
 
 <body>
-    
-    <div class="conteudo">
+
+    <div class="card">
 
         <h2>Cadastro de Livros</h2>
 
@@ -45,8 +45,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             <label>Ano de publicação</label>
             <input 
-                type="number" 
+                type="text" 
                 placeholder="Ano de publicação do livro"
+                maxlength="4"
                 name="ano_publicacao"
                 required>
             <br>
@@ -58,18 +59,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 name="genero">
             <br>
 
-            <button type="submit">Cadastrar</button>
+            <button class="btnCadastrar" type="submit">Cadastrar</button>
         </form>
 
         <div class="links">
-            <div>
-                <a href="listalivro.php">Ver livros cadastrados</a>
-            </div>
-            <div>
-                <a href="../index.html">Voltar para Início</a>
-            </div>
-        </div>
+            
+            <a href="listalivro.php">Ver livros cadastrados</a>
         
+            <a href="../index.html">Voltar para Início</a>
+            
+        </div>
     </div>
 
 </body>
