@@ -30,7 +30,7 @@ if (!$livro) {
 
 <body>
     
-    <div class="conteudo">
+    <div class="card">
 
         <h2>Atualizar Livro</h2>
 
