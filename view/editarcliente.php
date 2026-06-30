@@ -30,7 +30,7 @@ if (!$cliente) {
 
 <body>
     
-    <div class="conteudo">
+    <div class="card">
 
         <h2>Atualizar Cliente</h2>
 
@@ -106,7 +106,7 @@ if (!$cliente) {
                 value="<?= htmlspecialchars($cliente->getCidade()) ?>">
             <br>
 
-            <button type="submit">Salvar alterações</button>
+            <button type="submit" class="btnSalvarAlteracoes">Salvar alterações</button>
         </form>
 
         <div class="links">

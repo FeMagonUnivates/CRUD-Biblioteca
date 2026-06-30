@@ -74,7 +74,7 @@ if (!$livro) {
                 value="<?= htmlspecialchars($livro->getGenero()) ?>">
             <br>
 
-            <button type="submit">Salvar alterações</button>
+            <button type="submit" class="btnSalvarAlteracoes">Salvar alterações</button>
         </form>
 
         <div class="links">
